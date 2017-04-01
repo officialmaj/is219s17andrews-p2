@@ -28,12 +28,13 @@ body {
 	
 	height: 50px;
 	width: 50px;
-	position: relative;
-	z-index: 3;
 	opacity: .8;
+	webkit-transform: rotate(90deg);
+	z-index: 3;
+	position: relative;
 	left:297px;
 	bottom:70px;
-	webkit-transform: rotate(90deg);
+	
 }
 
 .thumbnail {
@@ -53,14 +54,17 @@ body {
 }
 
 #prevPhoto {
+	
 	height: 42px;
 	width: 42px;
-	-webkit-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg
 	padding-right: 10px;
+	
 }
 
 #nextPhoto {
 	
+	height: 42px;
 	width: 42px;
 	right; -540px;
 	position: relative;
