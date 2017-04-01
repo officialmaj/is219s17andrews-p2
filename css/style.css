@@ -57,16 +57,17 @@ body {
 	
 	height: 42px;
 	width: 42px;
-	-webkit-transform: rotate(180deg
+	-webkit-transform: rotate(180deg);
 	padding-right: 10px;
 	
 }
 
 #nextPhoto {
 	
+	height: 42px;
 	width: 42px;
-	right; -540px;
 	position: relative;
+	left: 540px;
 }
 
 .details p {
