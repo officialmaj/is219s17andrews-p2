@@ -26,12 +26,14 @@ body {
 
 .moreIndicator {
 	
+	height: 50px;
 	width: 50px;
 	position: relative;
 	z-index: 3;
 	opacity: .8;
 	left:297px;
 	bottom:70px;
+	webkit-transform: rotate(90deg);
 }
 
 .thumbnail {
