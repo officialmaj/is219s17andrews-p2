@@ -56,7 +56,7 @@ body {
 
 #nextPhoto {
 	height: 42px;
-	width: 42px;
+	width: 42px; padding-left: 600px;
 }
 
 .details p {
