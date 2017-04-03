@@ -60,6 +60,11 @@ body {
 	
 }
 
+#prevPhoto:hover{
+	
+	opacity:0.3;
+}
+
 #nextPhoto {
 	
 	height: 42px;
