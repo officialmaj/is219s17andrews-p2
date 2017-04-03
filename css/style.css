@@ -68,6 +68,12 @@ body {
 	left: 540px;
 }
 
+#nextPhoto:hover{
+	
+	opacity: 0.3;
+	
+}
+
 .details p {
 	margin-top: 20px;
 }
