@@ -33,11 +33,11 @@ function animate() {
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
 
 function swapPhoto() {
-	//Add code here to access the #slideShow element.
-	//Access the img element and replace its source
-	//with a new image from your images array which is loaded 
-	//from the JSON string
+	
 	console.log('swap photo');
+	
+	$('#photo').attr("src", mImages[0].imgPath); // the parameter for mImages varies on the picture that you are trying to display on the webpage
+	
 }
 
 // Counter for the mImages array
@@ -71,14 +71,14 @@ $(document).ready( function() { ////////////////////////////////////////////////
 	// This initially hides the photos' metadata information
 	$('.details').eq(0).hide();
 	
-	/*$('.moreIndicator').click(function(){
+	
+	$('.moreIndicator').click(function(){
 		
-		$('.details').eq(0).hide();
-		
+		/*
 		$(this).removeClass('rot90');
 		$(this).addClass('rot270');
-		
-	}*/
+		*/
+	}
 	
  ///////////////////////////////////////////////////////////////////////////// ///////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////////////////////	
 	
