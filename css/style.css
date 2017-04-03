@@ -32,7 +32,8 @@ body {
 	opacity: .8;
 	left:297px;
 	bottom:70px;
-	-webkit-transform: rotate(-90deg);
+	-webkit-transform: rotate(90deg);
+	
 }
 
 .thumbnail {

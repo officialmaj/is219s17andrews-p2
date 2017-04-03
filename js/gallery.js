@@ -66,10 +66,21 @@ function makeGalleryImageOnloadCallback(galleryImage) {
 	}
 }
 
-$(document).ready( function() {
+$(document).ready( function() { ///////////////////////////////////////////////////////////////////////////// ///////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////////////////////
 	
 	// This initially hides the photos' metadata information
 	$('.details').eq(0).hide();
+	
+	/*$('.moreIndicator').click(function(){
+		
+		$('.details').eq(0).hide();
+		
+		$(this).removeClass('rot90');
+		$(this).addClass('rot270');
+		
+	}*/
+	
+ ///////////////////////////////////////////////////////////////////////////// ///////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////////////////////	
 	
 });
 
@@ -80,9 +91,13 @@ window.addEventListener('load', function() {
 }, false);
 
 function GalleryImage() {
+	
 	//implement me as an object to hold the following data about an image:
 	//1. location where photo was taken
+
+	
 	//2. description of photo
 	//3. the date when the photo was taken
 	//4. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
 }
+
