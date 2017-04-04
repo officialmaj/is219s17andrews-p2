@@ -34,10 +34,12 @@ function animate() {
 
 function swapPhoto() {
 	
+	/*
 	console.log('swap photo');
 	
 	$('#photo').attr("src", mImages[0].imgPath); // the parameter for mImages varies on the picture that you are trying to display on the webpage
 	
+	*/
 }
 
 // Counter for the mImages array
