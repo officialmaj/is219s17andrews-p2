@@ -33,11 +33,11 @@ function animate() {
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
 
 function swapPhoto() {
-	/*
+	
 	console.log('swap photo');
 	
 	$('#photo').attr("src", mImages[0].imgPath); // the parameter for mImages varies on the picture that you are trying to display on the webpage
-	*/
+	
 }
 
 // Counter for the mImages array
@@ -77,9 +77,9 @@ $(document).ready( function() { ////////////////////////////////////////////////
 		
 		$(this).removeClass('rot90');
 		$(this).addClass('rot270');
-		
-	});
+
 	
+	})
 	
  ///////////////////////////////////////////////////////////////////////////// ///////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////////////////////	
 	
