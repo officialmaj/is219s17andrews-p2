@@ -33,11 +33,22 @@ function animate() {
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
 
 function swapPhoto() {
-/*	
-	console.log('swap photo');
+
+	 if(mCurrentIndex < 0){
+		mCurrentIndex += mImages.length;
+	}
 	
-	$('#photo').attr("src", mImages[0].imgPath); // the parameter for mImages varies on the picture that you are trying to display on the webpage
-*/	
+	$("#photo").attr('src', mImages[mCurrentIndex].imgPath);
+	$(".location").text("Location: "+mImages[mCurrentIndex].imgLocation);
+	$(".description").text("Description: "+mImages[mCurrentIndex].description);
+	$(".date").text("Date: "+mImages[mCurrentIndex].date);
+
+	
+	mCurrentIndex++;
+	if(mCurrentIndex >=  mImages.length){
+		mCurrentIndex = 0;
+	}
+	
 }
 
 // Counter for the mImages array
@@ -67,8 +78,7 @@ function makeGalleryImageOnloadCallback(galleryImage) {
 }
 
 $(document).ready( function() { ///////////////////////////////////////////////////////////////////////////// ///////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////////////////////
-	
-	
+
 	$('.details').eq(0).hide();
 	
 	$('.moreIndicator').click(function(){
@@ -77,13 +87,13 @@ $(document).ready( function() { ////////////////////////////////////////////////
 		
 		$(this).removeClass('rot90');
 		$(this).addClass('rot270');
-
 	
 	})
 	
- ///////////////////////////////////////////////////////////////////////////// ///////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////////////////////	
 	
-});
+})
+	
+ ///////////////////////////////////////////////////////////////////////////// ///////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////////////////////	
 
 window.addEventListener('load', function() {
 	
