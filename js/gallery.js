@@ -31,6 +31,7 @@ function animate() {
 }
 
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
+var mCurrentIndex = 0;
 
 function swapPhoto() {
 
@@ -51,6 +52,14 @@ function swapPhoto() {
 	
 }
 
+function getQueryParams(qs) {
+	qs = qs.split("+").join(" ");
+	var params = {}, tokens, re = /[?&]?([^=]+)=([^&]*)/g;
+	while (tokens = re.exec(qs)) {
+		params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+	}
+	return params;
+}
 
 
 // Counter for the mImages array
@@ -111,7 +120,12 @@ $(document).ready( function() { ////////////////////////////////////////////////
 		$(this).removeClass('rot90');
 		$(this).addClass('rot270');
 	
-	})
+	});
+	
+	  $('#nextPhoto').click(function () {
+		console.log("nextPhoto was clicked!")
+		swapPhoto();
+		mLastFrameTime = 0;
 	
 	
 })
