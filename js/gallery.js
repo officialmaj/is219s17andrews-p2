@@ -107,7 +107,7 @@ mRequest.onreadystatechange = function() {
             var myline = mJson.images[i];
 			mImages.push(new GalleryImage(myline.imgLocation,myline.description,myline.date,myline.imgPath));
 		}
-		console.log(mImages);
+		
 		console.log(mJson);
 		console.log(mJson.images[0].date);
 		} catch(err) { 
@@ -135,10 +135,11 @@ $(document).ready( function() { ////////////////////////////////////////////////
 	$('.moreIndicator').click(function(){
 		
 		$('.details').eq(0).toggle(); 
+		$(this).toggleClass("rot90 rot270");
 		
 		$(this).removeClass('rot90');
 		$(this).addClass('rot270');
-	
+		
 	});
 	
 	  $('#nextPhoto').click(function () {
@@ -151,7 +152,6 @@ $(document).ready( function() { ////////////////////////////////////////////////
 		$('#prevPhoto').click(function(){
 			
 			console.log("prevPhoto was clicked");
-			mCurrentIndex -= 1;
 			swapPhoto();
 			mLastFrameTime = 0;
 			
@@ -174,3 +174,6 @@ function GalleryImage(imgLocation, description, date, imgPath) {
 	this.imgPath = imgPath;	
 
 }
+
+var testImage = new GalleryImage("testloc", "testdesc", "testdate", "testimg");
+console.log(testImage.location);
