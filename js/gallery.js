@@ -29,27 +29,32 @@ function animate() {
 		mLastFrameTime = currentTime;
 	}
 }
-
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
-var mCurrentIndex = 0;
 
 function swapPhoto() {
 
-	 if(mCurrentIndex < 0){
-		mCurrentIndex += mImages.length;
-	}
-	
-	$("#photo").attr('src', mImages[mCurrentIndex].imgPath);
-	$(".location").text("Location: "+mImages[mCurrentIndex].imgLocation);
-	$(".description").text("Description: "+mImages[mCurrentIndex].description);
-	$(".date").text("Date: "+mImages[mCurrentIndex].date);
-
-	
-	mCurrentIndex++;
-	if(mCurrentIndex >=  mImages.length){
-		mCurrentIndex = 0;
-	}
-	
+  if(mCurrentIndex == 0 || mCurrentIndex < mImages.length){
+      $('.thumbnail').attr("src", mImages[mCurrentIndex].img);
+      $('.location').text("Location: " + mImages[mCurrentIndex].location);
+      $('.description').text("Description: " + mImages[mCurrentIndex].description);
+      $('.date').text("Date: " + mImages[mCurrentIndex].date);
+      mCurrentIndex++;
+  } else if (mCurrentIndex >= mImages.length){
+    mCurrentIndex = 0;
+    $('.thumbnail').attr("src", mImages[mCurrentIndex].img);
+    $('.location').text("Location: " + mImages[mCurrentIndex].location);
+    $('.description').text("Description: " + mImages[mCurrentIndex].description);
+    $('.date').text("Date: " + mImages[mCurrentIndex].date);
+    mCurrentIndex++;
+  } else {
+    mCurrentIndex = mImages.length + mCurrentIndex;
+    $('.thumbnail').attr("src", mImages[mCurrentIndex].img);
+    $('.location').text("Location: " + mImages[mCurrentIndex].location);
+    $('.description').text("Description: " + mImages[mCurrentIndex].description);
+    $('.date').text("Date: " + mImages[mCurrentIndex].date);
+    mCurrentIndex++;
+  }
+	console.log('swap photo');
 }
 
 function getQueryParams(qs) {
@@ -61,23 +66,35 @@ function getQueryParams(qs) {
 	return params;
 }
 
+var $_GET = getQueryParams(document.location.search);
 
-// Counter for the mImages array
+if($_GET['json'] == null || $_GET['json'] == ''){
+  $_GET['json'] = 'images.json';
+}
+
 var mCurrentIndex = 0;
-
 // XMLHttpRequest variable
 var mRequest = new XMLHttpRequest();
 
 // Array holding GalleryImage objects (see below).
 var mImages = [];
 
-// Holds the retrived JSON information
 var mJson;
 
+// Holds the retrived JSON information
+var mUrl = $_GET['json'];
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
-var mUrl = 'insert_url_here_to_image_json';
-
+/*
+if($_GET["json"] == undefined){
+	
+	mUrl = "extra.json";
+}	else {
+	
+	mUrl = $_GET["json"];
+	
+}
+*/
 mRequest.onreadystatechange = function() { 
 	
 	if (mRequest.readyState == 4 && mRequest.status == 200) {
@@ -91,6 +108,8 @@ mRequest.onreadystatechange = function() {
 			mImages.push(new GalleryImage(myline.imgLocation,myline.description,myline.date,myline.imgPath));
 		}
 		console.log(mImages);
+		console.log(mJson);
+		console.log(mJson.images[0].date);
 		} catch(err) { 
 			console.log(err.message);
 		} 
@@ -115,7 +134,7 @@ $(document).ready( function() { ////////////////////////////////////////////////
 	
 	$('.moreIndicator').click(function(){
 		
-		$('.details').eq(0).show(); 
+		$('.details').eq(0).toggle(); 
 		
 		$(this).removeClass('rot90');
 		$(this).addClass('rot270');
@@ -127,8 +146,17 @@ $(document).ready( function() { ////////////////////////////////////////////////
 		swapPhoto();
 		mLastFrameTime = 0;
 	
-	
-})
+});
+
+		$('#prevPhoto').click(function(){
+			
+			console.log("prevPhoto was clicked");
+			mCurrentIndex -= 1;
+			swapPhoto();
+			mLastFrameTime = 0;
+			
+		});
+});
 	
  ///////////////////////////////////////////////////////////////////////////// ///////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////////////////////	
 
@@ -144,5 +172,5 @@ function GalleryImage(imgLocation, description, date, imgPath) {
 	this.description = description;
 	this.date = date;
 	this.imgPath = imgPath;	
-}
 
+}
