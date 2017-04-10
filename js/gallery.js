@@ -33,6 +33,27 @@ function animate() {
 
 function swapPhoto() {
 
+	if(mCurrentIndex < 0){
+		
+		mCurrentIndex += mImages.length;
+		
+	}
+	
+	mCurrentIndex++;
+	
+	if(mCurrentIndex >= mImages.length){
+		
+		mCurrentIndex = 0;
+		
+	}
+	
+	$("#photo").attr('src', mImages[mCurrentIndex].imgPath);
+	$(".location").text("Location: "+mImages[mCurrentIndex].imgLocation);
+	$(".description").text("Description: "+mImages[mCurrentIndex].description);
+	$(".date").text("Date: "+mImages[mCurrentIndex].date);
+	
+	
+
   if(mCurrentIndex == 0 || mCurrentIndex < mImages.length){
       $('.thumbnail').attr("src", mImages[mCurrentIndex].img);
       $('.location').text("Location: " + mImages[mCurrentIndex].location);
@@ -70,7 +91,10 @@ var $_GET = getQueryParams(document.location.search);
 
 if($_GET['json'] == null || $_GET['json'] == ''){
   $_GET['json'] = 'images.json';
+  
 }
+
+
 
 var mCurrentIndex = 0;
 // XMLHttpRequest variable
@@ -85,7 +109,8 @@ var mJson;
 var mUrl = $_GET['json'];
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
-/*
+
+
 if($_GET["json"] == undefined){
 	
 	mUrl = "extra.json";
@@ -94,7 +119,7 @@ if($_GET["json"] == undefined){
 	mUrl = $_GET["json"];
 	
 }
-*/
+
 mRequest.onreadystatechange = function() { 
 	
 	if (mRequest.readyState == 4 && mRequest.status == 200) {
@@ -134,16 +159,19 @@ $(document).ready( function() { ////////////////////////////////////////////////
 	
 	$('.moreIndicator').click(function(){
 		
-		$('.details').eq(0).toggle(); 
-		$(this).toggleClass("rot90 rot270");
+		$('.details').eq(0).toggle();
+		$("img.rot90").toggleClass("rot270", 3000);
+		//$('.details').toggleClass("rot270", 3000);
+	
 		
 		$(this).removeClass('rot90');
 		$(this).addClass('rot270');
 		
 	});
+		
 	
 	  $('#nextPhoto').click(function () {
-		console.log("nextPhoto was clicked!")
+		console.log("nextPhoto clicked")
 		swapPhoto();
 		mLastFrameTime = 0;
 	
@@ -151,7 +179,7 @@ $(document).ready( function() { ////////////////////////////////////////////////
 
 		$('#prevPhoto').click(function(){
 			
-			console.log("prevPhoto was clicked");
+			console.log("prevPhoto clicked");
 			swapPhoto();
 			mLastFrameTime = 0;
 			
