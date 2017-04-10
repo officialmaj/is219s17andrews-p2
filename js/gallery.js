@@ -15,7 +15,7 @@
 
 animate();
 
-var mLastFrameTime = 0;
+var mLastFrameTime = 1;
 var mWaitTime = 5000; //time in ms
 function animate() {
     requestAnimFrame( animate );
@@ -160,14 +160,15 @@ $(document).ready( function() { ////////////////////////////////////////////////
 	$('.moreIndicator').click(function(){
 		
 		$('.details').eq(0).toggle();
-		$("img.rot90").toggleClass("rot270", 3000);
-		//$('.details').toggleClass("rot270", 3000);
-	
-		
-		$(this).removeClass('rot90');
-		$(this).addClass('rot270');
+		$(this).toggleClass("rot90 rot270");
 		
 	});
+	
+		
+		//$(this).removeClass('rot90');
+		//$(this).addClass('rot270');
+		
+
 		
 	
 	  $('#nextPhoto').click(function () {
@@ -179,12 +180,15 @@ $(document).ready( function() { ////////////////////////////////////////////////
 
 		$('#prevPhoto').click(function(){
 			
+			
 			console.log("prevPhoto clicked");
 			swapPhoto();
 			mLastFrameTime = 0;
 			
 		});
+
 });
+		
 	
  ///////////////////////////////////////////////////////////////////////////// ///////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////////////////////	
 
