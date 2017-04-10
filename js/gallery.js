@@ -106,17 +106,17 @@ var mImages = [];
 var mJson;
 
 // Holds the retrived JSON information
-var mUrl = $_GET['images.short.json'];
+var mUrl = $_GET['json'];
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
 
 
 if($_GET["json"] == undefined){
 	
-	mUrl = "images.short.json";
+	mUrl = "extra.json";
 }	else {
 	
-	mUrl = $_GET["images.short.json"];
+	mUrl = $_GET["json"];
 	
 }
 
@@ -209,3 +209,5 @@ function GalleryImage(imgLocation, description, date, imgPath) {
 
 }
 
+var testImage = new GalleryImage("testloc", "testdesc", "testdate", "testimg");
+console.log(testImage.location);
