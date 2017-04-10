@@ -106,17 +106,17 @@ var mImages = [];
 var mJson;
 
 // Holds the retrived JSON information
-var mUrl = $_GET['json'];
+var mUrl = $_GET['images.short.json'];
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
 
 
 if($_GET["json"] == undefined){
 	
-	mUrl = "extra.json";
+	mUrl = "images.short.json";
 }	else {
 	
-	mUrl = $_GET["json"];
+	mUrl = $_GET["images.short.json"];
 	
 }
 
@@ -173,6 +173,7 @@ $(document).ready( function() { ////////////////////////////////////////////////
 	
 	  $('#nextPhoto').click(function () {
 		console.log("nextPhoto clicked")
+		mCurrentIndex -=1;
 		swapPhoto();
 		mLastFrameTime = 0;
 	
@@ -182,6 +183,7 @@ $(document).ready( function() { ////////////////////////////////////////////////
 			
 			
 			console.log("prevPhoto clicked");
+			mCurrentIndex -= 3;
 			swapPhoto();
 			mLastFrameTime = 0;
 			
@@ -207,5 +209,3 @@ function GalleryImage(imgLocation, description, date, imgPath) {
 
 }
 
-var testImage = new GalleryImage("testloc", "testdesc", "testdate", "testimg");
-console.log(testImage.location);
