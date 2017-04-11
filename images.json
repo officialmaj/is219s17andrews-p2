@@ -7,7 +7,7 @@
             "date": "01/01/2016"
         },
         {
-            "imgPath": "img/places/austria.jpg",
+            "imgPath": "img/places/australia.jpg",
             "imgLocation": "Austria",
             "description": "Austrian chapel",
             "date": "01/02/2016"
@@ -19,13 +19,13 @@
             "date": "01/03/2016"
         },
         {
-            "imgPath": "img/places/greece.jpg",
+            "imgPath": "img/places/australia.jpg",
             "imgLocation": "Greece",
             "description": "Greek coastline",
             "date": "01/04/2016"
         },
         {
-            "imgPath": "img/places/hungary.jpg",
+            "imgPath": "img/places/australia.jpg",
             "imgLocation": "Hungary",
             "description": "Budapest skyline",
             "date": "01/05/2016"
@@ -37,13 +37,13 @@
             "date": "01/06/2016"
         },
         {
-            "imgPath": "img/places/italy.jpg",
+            "imgPath": "img/places/australia.jpg",
             "imgLocation": "Italy",
             "description": "Venice",
             "date": "01/07/2016"
         },
         {
-            "imgPath": "img/places/japan.jpg",
+            "imgPath": "img/places/australia.jpg",
             "imgLocation": "Japan",
             "description": "Hirosaki Castle",
             "date": "01/08/2016"

@@ -90,7 +90,7 @@ function getQueryParams(qs) {
 var $_GET = getQueryParams(document.location.search);
 
 if($_GET['json'] == null || $_GET['json'] == ''){
-  $_GET['json'] = 'images.json';
+  $_GET['json'] = 'extra.json';
   
 }
 
