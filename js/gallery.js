@@ -56,21 +56,21 @@ function swapPhoto() {
 
   if(mCurrentIndex == 0 || mCurrentIndex < mImages.length){
       $('.thumbnail').attr("src", mImages[mCurrentIndex].img);
-      $('.location').text("Location: " + mImages[mCurrentIndex].location);
+      $('.location').text("Location: " + mImages[mCurrentIndex].imgLocation);
       $('.description').text("Description: " + mImages[mCurrentIndex].description);
       $('.date').text("Date: " + mImages[mCurrentIndex].date);
       mCurrentIndex++;
   } else if (mCurrentIndex >= mImages.length){
     mCurrentIndex = 0;
     $('.thumbnail').attr("src", mImages[mCurrentIndex].img);
-    $('.location').text("Location: " + mImages[mCurrentIndex].location);
+    $('.location').text("Location: " + mImages[mCurrentIndex].imgLocation);
     $('.description').text("Description: " + mImages[mCurrentIndex].description);
     $('.date').text("Date: " + mImages[mCurrentIndex].date);
     mCurrentIndex++;
   } else {
     mCurrentIndex = mImages.length + mCurrentIndex;
     $('.thumbnail').attr("src", mImages[mCurrentIndex].img);
-    $('.location').text("Location: " + mImages[mCurrentIndex].location);
+    $('.location').text("Location: " + mImages[mCurrentIndex].imgLocation);
     $('.description').text("Description: " + mImages[mCurrentIndex].description);
     $('.date').text("Date: " + mImages[mCurrentIndex].date);
     mCurrentIndex++;

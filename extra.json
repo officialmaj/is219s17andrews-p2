@@ -4,43 +4,43 @@
             "imgPath": "img/places/christ_the_redeemer.jpg",
             "imgLocation": "Brazil",
             "description": "Christ the Redeemer",
-            "date": "01/01/2016"
+            "date": "07/09/2007"
         },
         {
             "imgPath": "img/places/chichen_itza.jpg",
             "imgLocation": "Mexico",
             "description": "Chichén Itzá",
-            "date": "01/02/2016"
+            "date": "07/09/2007"
         },
         {
             "imgPath": "img/places/taj_mahal.jpg",
             "imgLocation": "India",
             "description": "Taj Mahal",
-            "date": "01/03/2016"
+            "date": "07/09/2007"
         },
         {
             "imgPath": "img/places/the_colosseum.jpg",
             "imgLocation": "Italy",
             "description": "Colosseum",
-            "date": "01/04/2016"
+            "date": "07/09/2007"
         },
         {
             "imgPath": "img/places/great_wall_of_china.jpg",
             "imgLocation": "China",
             "description": "Great Wall of China",
-            "date": "01/05/2016"
+            "date": "07/09/2007"
         },
         {
             "imgPath": "img/places/machu_picchu.jpg",
             "imgLocation": "Peru",
             "description": "Machu Picchu",
-            "date": "01/06/2016"
+            "date": "07/09/2007"
         },
         {
             "imgPath": "img/places/petra_jordan.jpg",
             "imgLocation": "Jordan",
             "description": "Petra Jordan",
-            "date": "01/07/2016"
+            "date": "07/09/2007"
         }
   ]
 }
